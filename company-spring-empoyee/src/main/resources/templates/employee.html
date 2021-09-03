@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee</title>
+</head>
+<body>
+<h1 style="text-align: center; color: red">Employees</h1>
+<h4 style="margin-left: 80%"><a href="/logout">Logout</a></h4>
+<h4 style="margin-left: 80%"><a href="/index">Home</a></h4>
+<h4 style="margin-left: 80%"><a href="/addEmployee">Add empoyee</a></h4>
+<h4 style="margin-left: 80%"><a href="/sentMassage">massage</a></h4>
+<h4 style="margin-left: 80%"><a href="/comment">Comment</a></h4>
+<h4 style="margin-left: 80%"><a href="/allMassage">All Masage</a></h4>
+<h4 style="margin-left: 80%"><a href="/topics">topic</a></h4>
+
+<div style="margin-left: 5%; color: #d23939; margin-top: -15%">
+    <table border="">
+
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>SURNAME</th>
+            <th>EMAIL</th>
+            <th>PHONE NUMBER</th>
+            <th>SALARY</th>
+            <th>POSIYION</th>
+            <th>COMPANY NAME</th>
+        </tr>
+        <tr th:each="employee : ${employees}">
+            <td th:text="${employee.id}"></td>
+            <td th:text="${employee.name}"></td>
+            <td th:text="${employee.surname}"></td>
+            <td th:text="${employee.email}"></td>
+            <td th:text="${employee.phoneNumber}"></td>
+            <td th:text="${employee.salary}"></td>
+            <td th:text="${employee.position}"></td>
+            <td th:text="${employee.companyId.name}"></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

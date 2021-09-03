@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Massage</title>
+</head>
+<body>
+<h1 style="text-align: center">All Massage</h1>
+
+
+
+<div>
+    <table border="1">
+  <tr>
+      <th>Form</th>
+      <th>Massage</th>
+  </tr>
+        <tr th:each="massage : ${messages}">
+            <td th:text="${massage.fromEmployee.id}"></td>
+            <td th:text="${massage.letter}"></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

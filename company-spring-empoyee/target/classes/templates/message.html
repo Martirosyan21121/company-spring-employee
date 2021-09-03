@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Massage</title>
+</head>
+<body>
+<h1 style="text-align: center; color: blue">MASSAGES</h1>
+<h4 style="margin-left: 80%"><a href="/logout">Logout</a></h4><br>
+<h4 style="margin-left: 80%"><a href="/index">Home Page</a></h4>
+<form action="/sendCompany" method="post">
+    <textarea name="letter"></textarea><br>
+    <select name="toEmployee.id">
+        <option th:each="employee : ${employees}" th:text="${employee.name}" th:value="${employee.id}"></option>
+    </select>
+    <br>
+    <input type="submit" value="add">
+</form>
+</body>
+</html>

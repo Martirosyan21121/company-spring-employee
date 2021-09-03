@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>More</title>
+</head>
+<body>
+<h1 style="text-align: center">More</h1>
+
+<h2 th:text="${topic.name}"></h2>
+
+<div>
+    <table border="1">
+        <tr th:each="comment : ${comments}">
+            <td th:text="${comment.text}"></td>
+            <td th:text="${comment.createDate}"></td>
+            <td th:text="${comment.employee.name}"></td>
+        </tr>
+        <br>
+    </table>
+</div>
+<form action="/addComment" method="post">
+    <input type="hidden" th:value="${topic.id}" name="topic Id">
+    <textarea name="text"></textarea>
+    <input type="submit" value="Add Comment">
+</form>
+</body>
+</html>
