@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <title>Massage</title>
 </head>
-<body>
+<body style="background-color: #ef8b67">
 <h1 style="text-align: center; color: blue">MASSAGES</h1>
-<h4 style="margin-left: 80%"><a href="/logout">Logout</a></h4><br>
+<h4 style="margin-left: 80%"><a href="/logout">Logout</a></h4>
 <h4 style="margin-left: 80%"><a href="/index">Home Page</a></h4>
-<form action="/sendCompany" method="post">
+<form action="/sendMessage" method="post" style="text-align: center; margin-top: -5%">
     <textarea name="letter"></textarea><br>
     <select name="toEmployee.id">
         <option th:each="employee : ${employees}" th:text="${employee.name}" th:value="${employee.id}"></option>

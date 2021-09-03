@@ -2,14 +2,14 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>More</title>
+    <title>Single Topic</title>
 </head>
-<body>
-<h1 style="text-align: center">More</h1>
+<body style="background-color: #ef8b67">
+<h1 style="text-align: center">Single Topic</h1>
 
 <h2 th:text="${topic.name}"></h2>
 
-<div>
+<div style="margin-left: 50%">
     <table border="1">
         <tr th:each="comment : ${comments}">
             <td th:text="${comment.text}"></td>
@@ -19,7 +19,8 @@
         <br>
     </table>
 </div>
-<form action="/addComment" method="post">
+
+<form action="/addComment" method="post" style="text-align: center; margin-top: 10%">
     <input type="hidden" th:value="${topic.id}" name="topic Id">
     <textarea name="text"></textarea>
     <input type="submit" value="Add Comment">
